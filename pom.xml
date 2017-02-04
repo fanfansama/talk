@@ -17,6 +17,9 @@
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <docker.plugin.version>0.4.13</docker.plugin.version>
+        <docker.image.prefix>fanfansama</docker.image.prefix>
     </properties>
 
 
@@ -126,6 +129,32 @@
                     </configuration>
                 </plugin>
 
+                <!-- docker -->
+                <plugin>
+                    <groupId>com.spotify</groupId>
+                    <artifactId>docker-maven-plugin</artifactId>
+                    <version>${docker.plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>build</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+                        <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
+                        <resources>
+                            <resource>
+                                <targetPath>/</targetPath>
+                                <directory>${project.build.directory}</directory>
+                                <include>${project.build.finalName}-exec.jar</include>
+                            </resource>
+                        </resources>
+                    </configuration>
+                </plugin>
+
             </plugins>
         </pluginManagement>
 
@@ -148,6 +177,7 @@
         <module>sample-microservice</module>
         <module>discovery-microservice</module>
         <module>api-gateway-microservice</module>
+        <module>hystrix-dashboard</module>
 
     </modules>
 
