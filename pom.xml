@@ -174,10 +174,10 @@
 
     <modules>
 
-        <module>sample-microservice</module>
         <module>discovery-microservice</module>
         <module>api-gateway-microservice</module>
         <module>hystrix-dashboard</module>
+        <module>sample-microservice</module>
 
     </modules>
 

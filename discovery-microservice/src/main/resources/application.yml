@@ -4,10 +4,6 @@ server:
 management:
   context-path: /manage
 
-#eureka:
-#  instance:
-#    hostname: discovery
-#      defaultZone: http://discovery:${server.port}/eureka/
 
 eureka:
   datacenter: talanlabs
@@ -25,5 +21,8 @@ eureka:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 
-
-
+# DOCKER
+#eureka:
+#  instance:
+#    hostname: discovery
+#      defaultZone: http://discovery:${server.port}/eureka/
