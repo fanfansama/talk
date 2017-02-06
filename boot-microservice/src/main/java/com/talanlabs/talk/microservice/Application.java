@@ -1,4 +1,4 @@
-package com.talanlabs.talk.micr;
+package com.talanlabs.talk.microservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,4 +9,6 @@ public class Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
+
+
 }

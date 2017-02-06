@@ -173,7 +173,7 @@
         <module>api-gateway-microservice</module>
         <module>hystrix-dashboard</module>
         <module>sample-microservice</module>
-        <module>boot-microservice</module>
+     <!--   <module>boot-microservice</module> -->
 
     </modules>
 
