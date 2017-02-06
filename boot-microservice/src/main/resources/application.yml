@@ -1,0 +1,20 @@
+
+banner:
+  charset: UTF-8 # Banner file encoding.
+
+server:
+  port: 9000
+
+management:
+  context-path: /manage
+
+
+# Define the Eureka server that handles service registration
+eureka:
+  instance:
+    statusPageUrlPath: ${management.context-path}/info
+    healthCheckUrlPath: ${management.context-path}/health
+    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

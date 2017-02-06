@@ -60,11 +60,6 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-hystrix</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
 
@@ -178,6 +173,7 @@
         <module>api-gateway-microservice</module>
         <module>hystrix-dashboard</module>
         <module>sample-microservice</module>
+        <module>boot-microservice</module>
 
     </modules>
 
